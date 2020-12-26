@@ -1,0 +1,8 @@
+image: samueldebruyn/debian-git
+pipelines:
+  default:
+    - step:
+        script:
+          - apt-get update
+          - apt-get -qq install git-ftp
+          - git ftp push --user $FTP_USER --passwd $FTP_PASS ftp://206.189.124.96/
